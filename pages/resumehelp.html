@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+      <script src="/vendor/jquery/jquery.min.js"></script>
+      <script> 
+        $(function(){
+          $("footer").load("/includes/footer.html");
+          $("#main-nav").load("/includes/navigation.html");
+          $.get("/includes/head.html", function(data){
+            $("head").prepend(data);
+          });
+        });
+      </script>
+  </head>
+
+  <body>
+
+    <nav id="main-nav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"></nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <h1 class="mt-4 mb-3">Resume Help
+      </h1>
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Resume Help</li>
+      </ol>
+
+      <!-- Content Row -->
+      <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-lg-3 mb-4">
+          <div class="list-group">
+            <a href="#" data-article-path="resume/tips.html" class="list-group-item">Tips</a>
+          </div>
+        </div>
+        <!-- Content Column -->
+        <div id="article-content" class="col-lg-9 mb-4">
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#article-content").load("/articles/resume/tips.html");
+      });
+      // script for dynamically loading reference page contents from the
+      $(".list-group-item").click(function(ev) {
+        $("#article-content").load("/articles/"+$(this).attr("data-article-path"));
+      });
+    </script>
+  </body>
+
+</html>
