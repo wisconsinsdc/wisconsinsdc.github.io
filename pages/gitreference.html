@@ -2,14 +2,24 @@
 <html lang="en">
 
   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      
+      <title>UW-Madison Software Development Club</title>
+      
+      <!-- Bootstrap core CSS -->
+      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      
+      <!-- Custom styles for this template -->
+      <link href="/css/modern-business.css" rel="stylesheet">
+      <link href="/css/prism.css" rel="stylesheet">
       <script src="/vendor/jquery/jquery.min.js"></script>
       <script> 
         $(function(){
           $("footer").load("/includes/footer.html");
           $("#main-nav").load("/includes/navigation.html");
-          $.get("/includes/head.html", function(data){
-            $("head").prepend(data);
-          });
         });
       </script>
   </head>
@@ -39,7 +49,7 @@
           <div class="list-group">
             <a href="#" data-article-path="git/getting-started.html" class="list-group-item">Getting Started</a>
             <a href="#" data-article-path="git/basic-commands.html" class="list-group-item">Basic Commands</a>
-            <a href="#" data-article-path="git/reccomended-reading.html" class="list-group-item">Reccomended Reading</a>
+            <a href="#" data-article-path="git/recommended-reading.html" class="list-group-item">Recommended Reading</a>
           </div>
         </div>
         <!-- Content Column -->
@@ -63,9 +73,10 @@
     <!-- Bootstrap core JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/prism.js"></script>
     <script>
       $(document).ready(function() {
-        $("#article-content").load("/articles/git/reccomended-reading.html");
+        $("#article-content").load("/articles/git/getting-started.html");
       });
       // script for dynamically loading reference page contents from the
       $(".list-group-item").click(function(ev) {

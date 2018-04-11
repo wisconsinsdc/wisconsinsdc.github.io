@@ -1,0 +1,52 @@
+<h2>Basic Git Commands</h2>
+<br/>
+<h4>Create Local Repository</h4>
+<p>Create a fresh repository: </p>
+<code class="language-bash">git init [name]</code>
+<p>Clone a remote repository (from GitHub or other): </p>
+<code class="language-bash">git clone [project url]</code>
+<br/>
+<h4>Adding/Removing</h4>
+<p>Stage a file for the next commit: </p>
+<code class="language-bash">git add [filename]</code>
+<p>Stage all modified files: </p>
+<code class="language-bash">git add .</code>
+<p>Commit all staged files: </p>
+<code class="language-bash">git commit -m "describe your changes"</code>
+<p>Unstage a file: </p>
+<code class="language-bash">git reset [filename]</code>
+<p>Reset everything back to the last commit (warning: destructive): </p>
+<code class="language-bash">git reset --hard</code>
+<br/>
+<h4>Branching</h4>
+<p>List local branches: </p>
+<code class="language-bash">git branch</code>
+<p>List local and remote branches: </p>
+<code class="language-bash">git branch -av</code>
+<p>Switch to a branch: </p>
+<code class="language-bash">git checkout [branch_name]</code>
+<p>Create a new branch: </p>
+<code class="language-bash">git branch [new_branch_name]</code>
+<p>Delete a branch: </p>
+<code class="language-bash">git branch -d [branch_name]</code>
+<p>Merge branch1 into branch2: </p>
+<code class="language-bash">git checkout branch2</code>
+<code class="language-bash">git merge branch1</code>
+<p>Tag the current commit: </p>
+<code class="language-bash">git tag [my tag]</code>
+<br/>
+<h4>Observing</h4>
+<p>List new/modified and stages files that haven't been committed: </p>
+<code class="language-bash">git status</code>
+<p>Show changes to unstaged files: </p>
+<code class="language-bash">git diff</code>
+<p>Show changes to staged files: </p>
+<code class="language-bash">git diff --cached</code>
+<p>Show all staged and unstaged file changes: </p>
+<code class="language-bash">git diff HEAD</code>
+<p>Show changes between two commits: </p>
+<code class="language-bash">git diff [commit1] [commit2]</code>
+<p>Show authors and change history for a file: </p>
+<code class="language-bash">git blame [filename]</code>
+<p>Show full change history: </p>
+<code class="language-bash">git log</code>
