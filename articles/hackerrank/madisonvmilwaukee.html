@@ -1,0 +1,87 @@
+<h2>Madison v. Milwaukee Spring 2018</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <div id="match-details-curtain">
+            <div id="match-details-container">
+                <div id="title">Score</div>
+                <div id="teams-container">
+                    <div class="homecomming-team flexbox-items">
+                        <div class="homecomming-team logo"></div>
+                        <br />
+                        <div class="homecomming-team name"></div>
+                    </div>
+                    <div class="flexbox-items">
+                        <div id="time-of-match"></div>
+                        <div id="date-of-match"></div>
+                        <br />
+                        <div id="vs"><div class="circle"></div><hr id="vs-line"/><div class="circle"></div></div>
+                    </div>
+                    <div class="away-team flexbox-items">
+                        <div class="away-team logo"></div>
+                        <br />
+                        <div class="away-team name"></div>
+                    </div>
+                </div>
+                <div id="score-container">
+                    <div class="homecomming-team score"></div>
+                    <div class="away-team score"></div>
+                </div>
+                <hr id="bottom-devider" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var $detailsContainer = $('#match-details-container');
+    var $detailsCurtain = $('#match-details-curtain');
+
+    $('#trigger').on('click', function(e) {
+        e.preventDefault();
+        showDetailedMatchStatistics();
+    });
+
+    $('#close-details').on('click', function(e) {
+        e.preventDefault();
+        closeDetailedMatchStatistics();
+    });
+
+    var fillDetailedMatchStatistics = function(homeCommingName, homeCommingLogo, homeCommingScore, awayName, awayLogo, awayScore, date, time) {
+        $('.homecomming-team.logo').css('background-image', 'url("' + homeCommingLogo + '"); background-size: cover; background-position: center center;');
+
+        $('.homecomming-team.name').text(homeCommingName);
+
+        $('.homecomming-team.score').text(homeCommingScore);
+
+        $('.away-team.logo').css('background-image', 'url("' + awayLogo + '"); background-size: cover; background-position: center center;');
+
+        $('.away-team.name').text(awayName);
+
+        $('.away-team.score').text(awayScore);
+
+        $('#date-of-match').text(date);
+        $('#time-of-match').text(time);
+        
+        var $awayTeamScoreEl = $('.away-team.score');
+        var $homeCommingTeamScoreEl = $('.homecomming-team.score');
+        var $awayTeamScore = +$awayTeamScoreEl.text();
+        var $homeCommingTeamScore = +$homeCommingTeamScoreEl.text();
+        
+        if($awayTeamScore == $homeCommingTeamScore) {
+            $($awayTeamScoreEl, $homeCommingTeamScoreEl).addClass('winner');
+        } else if($awayTeamScore > $homeCommingTeamScore) {
+            $awayTeamScoreEl.addClass('winner');
+            $homeCommingTeamScoreEl.removeClass('winner');
+        } else {
+            $awayTeamScoreEl.removeClass('winner');
+            $homeCommingTeamScoreEl.addClass('winner');
+        }
+    };
+
+    var showDetailedMatchStatistics = function() {
+        $detailsCurtain.css('display', 'flex').animate({'opacity': 1}, 300, function() {
+            $detailsContainer.animate({'opacity': 1}, 700);
+        });
+    }
+
+    fillDetailedMatchStatistics('UW Madison', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Wisconsin_Badgers_logo.svg/250px-Wisconsin_Badgers_logo.svg.png', 2, 'UW Milwaukee', 'https://cstest.s3.amazonaws.com/mb/2016/02/university-of-wisconsin-milwaukee-logo.png', 0, 'Spring 2018', '1 Match Remaining');
+</script>
