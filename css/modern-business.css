@@ -9,12 +9,19 @@ html {
 body {
   padding-top: 89px;
 }
-
+#sdc-logo-div {
+  display: none;
+}
 @media (min-width: 992px) {
   body {
     padding-top: 91px;
   }
+  #sdc-logo-div {
+    display: block;
+  }
 }
+
+
 
 .carousel-item {
   height: 65vh;
