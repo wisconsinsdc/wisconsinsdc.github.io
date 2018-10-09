@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      
-      <title>UW-Madison Software Development Club</title>
-      
-      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      
-      <link href="/css/modern-business.css" rel="stylesheet">
-      <link href="/css/prism.css" rel="stylesheet">
-      <script src="/vendor/jquery/jquery.min.js"></script>
-      <script> 
-        $(function(){
-          $("footer").load("/includes/footer.html");
-          $("#main-nav").load("/includes/navigation.html");
-        });
-      </script>
-  </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <body>
+    <title>UW-Madison Software Development Club</title>
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/modern-business.css" rel="stylesheet">
+    <link href="/css/prism.css" rel="stylesheet">
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("footer").load("/includes/footer.html");
+            $("#main-nav").load("/includes/navigation.html");
+        });
+    </script>
+</head>
+
+<body>
 
     <nav id="main-nav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top"></nav>
     <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content"  id="match-details-container"> 
+            <div class="modal-content" id="match-details-container">
                 <div id="title">Score</div>
                 <div id="teams-container">
                     <div class="homecomming-team flexbox-items">
@@ -39,7 +39,11 @@
                         <div id="time-of-match"></div>
                         <div id="date-of-match"></div>
                         <br />
-                        <div id="vs"><div class="circle"></div><hr id="vs-line"/><div class="circle"></div></div>
+                        <div id="vs">
+                            <div class="circle"></div>
+                            <hr id="vs-line" />
+                            <div class="circle"></div>
+                        </div>
                     </div>
                     <div class="away-team flexbox-items">
                         <div class="away-team logo"></div>
@@ -56,62 +60,62 @@
             </div>
         </div>
     </div>
-        
+
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Past HackerRank Challenges
-      </h1>
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Past HackerRank Challenges
+        </h1>
 
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="/">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Past HackerRank Challenges</li>
-      </ol>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Past HackerRank Challenges</li>
+        </ol>
 
-      <!-- Content Row -->
-      <div class="row">
-        <!-- Sidebar Column -->
-        <div class="col-lg-3 mb-4">
-          <div class="list-group">
-            <a href="#" data-article-path="hackerrank/past-challenges.html" class="list-group-item">Past Challenges</a>
-            <a href="#" data-article-path="hackerrank/solutions.html" class="list-group-item">Solutions to Past Challenges</a>
-            <a href="#" id="trigger" class="list-group-item">Madison v. Milwaukee Score</a>
-          </div>
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Sidebar Column -->
+            <div class="col-lg-3 mb-4">
+                <div class="list-group">
+                    <a href="#" data-article-path="hackerrank/past-challenges.html" class="list-group-item">Past Challenges</a>
+                    <a href="#" data-article-path="hackerrank/solutions.html" class="list-group-item">Solutions to Past Challenges</a>
+                    <a href="#" id="trigger" class="list-group-item">Madison v. Milwaukee Score</a>
+                </div>
+            </div>
+            <!-- Content Column -->
+            <div id="article-content" class="col-lg-9 mb-4">
+            </div>
+
         </div>
-        <!-- Content Column -->
-        <div id="article-content" class="col-lg-9 mb-4">
-        </div>
-
-      </div>
-      <!-- /.row -->
+        <!-- /.row -->
 
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
-      </div>
-      <!-- /.container -->
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        </div>
+        <!-- /.container -->
     </footer>
 
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/js/prism.js"></script>
     <script>
-      // load the default article when page is ready
-      $(document).ready(function() {
-        $("#article-content").load("/articles/hackerrank/past-challenges.html");
-      });
-      // janky jQuery CMS but hey it works
-      $(".list-group-item").click(function(ev) {
-          if($(this).attr("data-article-path"))
-            $("#article-content").load("/articles/"+$(this).attr("data-article-path"));
-      });
+        // load the default article when page is ready
+        $(document).ready(function () {
+            $("#article-content").load("/articles/hackerrank/past-challenges.html");
+        });
+        // janky jQuery CMS but hey it works
+        $(".list-group-item").click(function (ev) {
+            if ($(this).attr("data-article-path"))
+                $("#article-content").load("/articles/" + $(this).attr("data-article-path"));
+        });
     </script>
 
     <script type="text/javascript">
@@ -143,7 +147,7 @@
                 clientId: CLIENT_ID,
                 discoveryDocs: DISCOVERY_DOCS,
                 scope: SCOPES
-            }).then(function() {
+            }).then(function () {
                 getScoreData();
             });
         }
@@ -156,7 +160,7 @@
             gapi.client.sheets.spreadsheets.values.get({
                 spreadsheetId: '1Yqk2j6Ns2eE8EpWlk6FUwpvLrJ6u-_1d7mA1qA1kPkM',
                 range: 'Score!A1:B1',
-            }).then(function(response) {
+            }).then(function (response) {
                 var range = response.result;
                 if (range.values.length > 0) {
                     // get columns A and B (0 and 1)
@@ -164,30 +168,29 @@
                 } else {
                     console.log('No data found.');
                 }
-            }, function(response) {
+            }, function (response) {
                 console.log('Error: ' + response.result.error.message);
             });
         }
     </script>
-    <script async defer src="https://apis.google.com/js/api.js"
-    onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+
     </script>
     <script>
         var $detailsContainer = $('#match-details-container');
         var $detailsCurtain = $('#match-details-curtain');
 
-        $('#trigger').on('click', function(e) {
+        $('#trigger').on('click', function (e) {
             e.preventDefault();
             showDetailedMatchStatistics();
         });
 
-        $('#close-details').on('click', function(e) {
+        $('#close-details').on('click', function (e) {
             e.preventDefault();
             closeDetailedMatchStatistics();
         });
 
-        var fillDetailedMatchStatistics = function(homeCommingName, homeCommingLogo, homeScore, awayName, awayLogo, awayScore, date, time) {
+        var fillDetailedMatchStatistics = function (homeCommingName, homeCommingLogo, homeScore, awayName, awayLogo, awayScore, date, time) {
             $('.homecomming-team.logo').css('background-image', 'url("' + homeCommingLogo + '")');
 
             $('.homecomming-team.name').text(homeCommingName);
@@ -202,15 +205,15 @@
 
             $('#date-of-match').text(date);
             $('#time-of-match').text(time);
-            
+
             var $awayTeamScoreEl = $('.away-team.score');
             var $homeCommingTeamScoreEl = $('.homecomming-team.score');
             var $awayTeamScore = +$awayTeamScoreEl.text();
             var $homeCommingTeamScore = +$homeCommingTeamScoreEl.text();
-            
-            if($awayTeamScore == $homeCommingTeamScore) {
+
+            if ($awayTeamScore == $homeCommingTeamScore) {
                 $($awayTeamScoreEl, $homeCommingTeamScoreEl).addClass('winner');
-            } else if($awayTeamScore > $homeCommingTeamScore) {
+            } else if ($awayTeamScore > $homeCommingTeamScore) {
                 $awayTeamScoreEl.addClass('winner');
                 $homeCommingTeamScoreEl.removeClass('winner');
             } else {
@@ -219,15 +222,15 @@
             }
         };
 
-        var showDetailedMatchStatistics = function() {
+        var showDetailedMatchStatistics = function () {
             $("#eventModal").modal();
         }
 
-        var closeDetailedMatchStatistics = function() {
+        var closeDetailedMatchStatistics = function () {
             $("#eventModal").modal();
         }
 
     </script>
-  </body>
+</body>
 
 </html>
